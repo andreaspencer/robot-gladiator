@@ -104,16 +104,16 @@ var endGame = function () {
     else {
         window.alert("You've lost your robot in battle.");
     }
-}
 
-var playAgainConfirm = window.confirm("Would you like to play again?")
+    var playAgainConfirm = window.confirm("Would you like to play again?")
 
-if (playAgainConfirm) {
-    //restart the game
-    startGame();
-}
-else {
-    window.alert("Thank you for playing Robot Gladiators! Come back soon!")
-}
+    if (playAgainConfirm) {
+        //restart the game
+        startGame();
+    }
+    else {
+        window.alert("Thank you for playing Robot Gladiators! Come back soon!")
+    }
+};
  // start game when page loads
  startGame();
