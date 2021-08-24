@@ -54,6 +54,7 @@ var fight = function(enemy) {
     if (enemy.health <=0) {
         window.alert(enemy.name + " has died!");
         playerInfo.money = playerInfo.money + 20;
+        break;
     }
     else {
         window.alert(enemy.name + " still has " + enemy.health + " health left. ")
@@ -70,7 +71,7 @@ var fight = function(enemy) {
     // check player's health
     if (playerInfo.health <= 0) {
         window.alert(playerInfo.name + " has died!");
-    }
+    };
     else {
         window.alert(playerInfo.name + " still has " + playerInfo.health + " health remaining.")
     };
@@ -134,22 +135,18 @@ var endGame = function () {
 var shop = function() {
     //ask player what they'd like to do shop or continue
     var shopOptionPrompt = window.prompt(
-        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice."
+        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one 1 for 'REFILL', 2 for 'UPGRADE', or 3 for 'LEAVE' to make a choice."
     );
 
-    switch (shopOptionPrompt) {
-        case "REFILL": // new case
-        case "refill":
+    switch shopOptionPrompt= parseInt(shopOptionPrompt); {
+        case 1:
             playerInfo.refillHealth();
             break;
-        case "UPGRADE": //new case
-        case "upgrade":
+        case 2:
             playerInfo.upgradeAttack();
             break;
-        case "LEAVE": // new case
-        case "leave":
+        case 3:
             window.alert("Leaving the store.");
-
             break;
             default:
                 window.alert("You did not pick a valid option. Try again.");
