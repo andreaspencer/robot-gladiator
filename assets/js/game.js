@@ -55,10 +55,10 @@ var fight = function(enemy) {
         window.alert(enemy.name + " has died!");
         playerInfo.money = playerInfo.money + 20;
         break;
-    }
-    else {
+    } else {
         window.alert(enemy.name + " still has " + enemy.health + " health left. ")
     }
+    } else {
     //Subtract the value of 'enemyAttack' from the value of 'playerHealth' and use that result to update the value in the 'playerHealth' variable
     var damage = randomNumber(enemy.attack -3, enemy.attack);
 
@@ -71,10 +71,14 @@ var fight = function(enemy) {
     // check player's health
     if (playerInfo.health <= 0) {
         window.alert(playerInfo.name + " has died!");
-    };
-    else {
+        break;
+    } else {
         window.alert(playerInfo.name + " still has " + playerInfo.health + " health remaining.")
-    };
+    }
+    }
+    ifPlayerTurn = !isPlayerTurn;
+    }
+};
 
 var startGame = function() {
     //reset player stats
